@@ -1,0 +1,21 @@
+<html>
+    <head>
+    <meta charset="UTF-8" />
+    <title>WebCampBackendNew</title>
+    </head>
+    <body class="body">
+        <div class="show-body" >
+        <a class="gr"><%=  notice %></a>
+        <p>
+        <string>Titel:</string>
+        <%= @book.title %>
+        </p>
+        <p><string>Body:</string>
+        <%= @book.body %>
+        </p>
+        </div>
+         <%= link_to "Edit", edit_book_path(@book) %>
+         <a>|</a>
+         <%= link_to "Back", books_path(@book) %>
+    </body>
+</html>
