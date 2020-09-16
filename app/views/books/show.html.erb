@@ -1,11 +1,7 @@
 <html>
-    <head>
-    <meta charset="UTF-8" />
-    <title>WebCampBackendNew</title>
-    </head>
     <body class="body">
         <div class="show-body" >
-        <a class="gr"><%=  notice %></a>
+        <p class="gr"><%=  notice %></p>
         <p>
         <string>Titel:</string>
         <%= @book.title %>
@@ -15,7 +11,7 @@
         </p>
         </div>
          <%= link_to "Edit", edit_book_path(@book) %>
-         <a>|</a>
-         <%= link_to "Back", books_path(@book) %>
+         |
+         <%= link_to "Back", books_path %>
     </body>
 </html>

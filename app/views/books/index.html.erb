@@ -1,28 +1,29 @@
-<html>
-    <head>
-    <title>チノちゃん可愛い</title>
-    </head>
     <body class="body">
-            <a class="gr-index"><%=  notice %></a></a>
+            <p class="gr-index"><%=  notice %></p>
             <h1 class="header">BOOKs</h1>
             <table class="table">
+            <thead>
                 <tr>
-                    <td class="table-ti">Title</td>
-                    <td class="table-bo">Body</td>
-                    <td class="table-li"></td>
+                    <th class="table-ti">Title</th>
+                    <th class="table-bo">Body</th>
+                    <th class="table-li"></th>
                 </tr>
+            </thead>
+            <tbody>
                 <% @books.each do |book| %>
                 <tr>
-                    <td class="table-title"><%= link_to book.title %></td>
-                    <td class="table-body"><%= link_to book.body %></td>
-                    <td> <%= link_to "Show", book_path(book) %>
-                    <a class="table-link">
-                    <%= link_to "Edit", edit_book_path(book) %></a>
-                    <a class="table-link">
-                    <%= link_to "Destroy", book_path(book), method: :delete, "data-confirm" => "Are you sure?" %></a>
+                    <td class="table-title"><%= book.title %></td>
+                    <td class="table-body"><%= book.body %></td>
+                    <td class="table-link">
+                    <%= link_to "Show", book_path(book) %></td>
+                    <td class="table-link">
+                    <%= link_to "Edit", edit_book_path(book) %></td>
+                    <td class="table-link">
+                    <%= link_to "Destroy", book_path(book), method: :delete, "data-confirm" => "Are you sure?" %>
                     </td>
                 </tr>
                 <% end %>
+            </tbody>
             </table>
 <h3>New book</h3>
 
@@ -30,7 +31,7 @@
 <% if @book.errors.any? %>
     <ul>
       <% @book.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li><%= message + "error"%></li>
       <% end %>
     </ul>
 <% end %>
@@ -43,4 +44,3 @@
 
 <% end %>
     </body>
-</html>
